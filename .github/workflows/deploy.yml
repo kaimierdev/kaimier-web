@@ -10,9 +10,37 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # 注意：若 TCLOUD_PORT 为空，不要传 port，否则空字符串会覆盖 action 默认 22 导致秒失败
+      # 先探测端口：若此处失败 = 安全组/防火墙/公网 IP 不对，与密钥无关
+      - name: Check SSH port reachable from GitHub
+        env:
+          HOST: ${{ secrets.TCLOUD_HOST }}
+          PORT: ${{ secrets.TCLOUD_PORT || '22' }}
+        run: |
+          set -e
+          if [ -z "$HOST" ]; then
+            echo "::error::Secret TCLOUD_HOST is empty"
+            exit 1
+          fi
+          echo "Probing TCP $HOST:$PORT ..."
+          python3 - <<'PY'
+          import os, socket, sys
+          host = os.environ["HOST"]
+          port = int(os.environ["PORT"])
+          s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+          s.settimeout(15)
+          try:
+              s.connect((host, port))
+              print("TCP OK:", host, port)
+          except Exception as e:
+              print("::error::Cannot connect to", host, port, "-", e)
+              print("Check: Tencent security group allows inbound TCP", port, "from 0.0.0.0/0")
+              sys.exit(1)
+          finally:
+              s.close()
+          PY
+
       - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.TCLOUD_HOST }}
           username: ${{ secrets.TCLOUD_USER }}
