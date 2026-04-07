@@ -10,13 +10,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # 注意：若 TCLOUD_PORT 为空，不要传 port，否则空字符串会覆盖 action 默认 22 导致秒失败
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.TCLOUD_HOST }}
           username: ${{ secrets.TCLOUD_USER }}
           key: ${{ secrets.TCLOUD_SSH_KEY }}
-          port: ${{ secrets.TCLOUD_PORT }}
+          port: ${{ secrets.TCLOUD_PORT || '22' }}
+          timeout: 60s
+          command_timeout: 30m
           script: |
             set -e
             if [ ! -d "${{ secrets.DEPLOY_PATH }}/.git" ]; then

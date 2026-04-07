@@ -63,6 +63,13 @@ Nginx 默认包含 `local/gateway.conf`，如需线上策略可将 `conf.d/*.con
 - `DEPLOY_PATH`：服务器部署目录（如 `/opt/kaimier-web`）
 - `REPO_SSH_URL`：仓库 SSH 地址（如 `git@github.com:org/repo.git`）
 
+若 **Deploy via SSH** 约 1 秒内失败，常见原因：
+
+- **`TCLOUD_PORT` 留空**：旧版工作流会把空端口传给 SSH，导致立即失败；当前工作流已改为未设置时默认 `22`。仍建议在 Secrets 里显式填 `22`。
+- **私钥格式**：`TCLOUD_SSH_KEY` 须为完整 PEM（含 `BEGIN`/`END`），粘贴后勿多空格；Ed25519 / RSA 均可。
+- **安全组 / 防火墙**：腾讯云轻量须放行入站 **22**（来源可 `0.0.0.0/0`，否则 GitHub Actions 出口 IP 不固定会连不上）。
+- **服务器上拉代码**：首次需在服务器上能 `ssh -T git@github.com` 成功（已配置 Deploy Key 或账号 SSH key）。
+
 主分支 push 后将自动 SSH 到服务器并执行：
 
 1. 拉取最新代码
