@@ -39,7 +39,7 @@ docker compose up -d --build
 - `kapis.dev` -> `kapis-platform`
 - `kapis.dev/api/*` -> `backend`
 
-宿主机端口映射（直连调试，不经 Nginx）：
+宿主机端口映射（直连调试时可用；对外入口为 nginx 的 **80**）：
 
 | 服务 | 宿主机端口 | 容器端口 |
 |------|------------|----------|
@@ -47,6 +47,8 @@ docker compose up -d --build
 | kaimier-site | 3001 | 80 |
 | kapis-platform | 3002 | 80 |
 | backend | 8080 | 8080 |
+
+部署前请确保宿主机 **80 未被占用**（若曾装过系统 Nginx，需先 `sudo systemctl stop nginx` 等）。
 
 Nginx 默认包含 `local/gateway.conf`，如需线上策略可将 `conf.d/*.conf` 中的 include 改为 `prod/gateway.conf`。
 
