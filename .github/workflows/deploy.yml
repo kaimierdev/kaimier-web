@@ -1,0 +1,31 @@
+name: Deploy to Tencent Lighthouse
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.TCLOUD_HOST }}
+          username: ${{ secrets.TCLOUD_USER }}
+          key: ${{ secrets.TCLOUD_SSH_KEY }}
+          port: ${{ secrets.TCLOUD_PORT }}
+          script: |
+            set -e
+            if [ ! -d "${{ secrets.DEPLOY_PATH }}/.git" ]; then
+              mkdir -p "${{ secrets.DEPLOY_PATH }}"
+              git clone "${{ secrets.REPO_SSH_URL }}" "${{ secrets.DEPLOY_PATH }}"
+            fi
+            cd "${{ secrets.DEPLOY_PATH }}"
+            git fetch origin main
+            git checkout main
+            git pull origin main
+            docker compose down
+            docker compose up -d --build

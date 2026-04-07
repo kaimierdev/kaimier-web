@@ -1,0 +1,9 @@
+node_modules/
+dist/
+target/
+.DS_Store
+
+# 切勿将 SSH 私钥或密钥归档提交到仓库
+id_rsa
+id_rsa/
+*.rar
