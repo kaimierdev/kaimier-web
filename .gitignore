@@ -1,6 +1,8 @@
 node_modules/
 dist/
 target/
+.nuxt/
+.output/
 .DS_Store
 
 # 切勿将 SSH 私钥或密钥归档提交到仓库

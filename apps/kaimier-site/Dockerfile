@@ -6,7 +6,7 @@ COPY package.json ./
 RUN pnpm install --frozen-lockfile=false
 
 COPY . .
-RUN pnpm build
+RUN pnpm generate
 
 FROM nginx:1.27-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/.output/public /usr/share/nginx/html

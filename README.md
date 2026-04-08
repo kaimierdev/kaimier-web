@@ -7,7 +7,9 @@ kaimier-web/
 ├── apps/
 │   ├── kaimier-site/     # kaimier.com 官网
 │   └── kapis-platform/   # kapis.dev 平台
-├── backend/              # API 服务
+├── backend/
+│   ├── springboot/       # Java API 服务
+│   └── fastapi/          # Python API 服务（预留）
 ├── nginx/
 │   ├── nginx.conf
 │   ├── conf.d/
@@ -25,7 +27,7 @@ kaimier-web/
 pnpm install
 pnpm --filter kaimier-site dev
 pnpm --filter kapis-platform dev
-cd backend
+cd backend/springboot
 mvn spring-boot:run
 ```
 
@@ -37,7 +39,7 @@ docker compose up -d --build
 
 - `kaimier.com` -> `kaimier-site`
 - `kapis.dev` -> `kapis-platform`
-- `kapis.dev/api/*` -> `backend`
+- `kapis.dev/api/*` -> `api-springboot`
 
 宿主机端口映射（直连调试时可用；对外入口为 nginx 的 **80**）：
 
@@ -46,7 +48,7 @@ docker compose up -d --build
 | nginx | 80 | 80 |
 | kaimier-site | 3001 | 80 |
 | kapis-platform | 3002 | 80 |
-| backend | 8080 | 8080 |
+| api-springboot | 8080 | 8080 |
 
 部署前请确保宿主机 **80 未被占用**（若曾装过系统 Nginx，需先 `sudo systemctl stop nginx` 等）。
 

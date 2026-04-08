@@ -3,7 +3,6 @@ services:
     build:
       context: ./apps/kaimier-site
       dockerfile: Dockerfile
-    container_name: kaimier-site
     restart: unless-stopped
     ports:
       - "3001:80"
@@ -12,30 +11,35 @@ services:
     build:
       context: ./apps/kapis-platform
       dockerfile: Dockerfile
-    container_name: kapis-platform
     restart: unless-stopped
     ports:
       - "3002:80"
 
-  backend:
+  api-springboot:
     build:
-      context: ./backend
+      context: ./backend/springboot
       dockerfile: Dockerfile
-    container_name: kaimier-backend
     restart: unless-stopped
     environment:
       - SERVER_PORT=8080
     ports:
       - "8080:8080"
 
+  # api-fastapi:
+  #   build:
+  #     context: ./backend/fastapi
+  #     dockerfile: Dockerfile
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8000:8000"
+
   nginx:
     image: nginx:1.27-alpine
-    container_name: kaimier-nginx
     restart: unless-stopped
     depends_on:
       - kaimier-site
       - kapis-platform
-      - backend
+      - api-springboot
     ports:
       - "80:80"
       - "443:443"

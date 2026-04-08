@@ -1,14 +1,14 @@
 {
   "name": "kaimier-site",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.1.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
   },
-  "devDependencies": {
-    "vite": "^8.0.5"
+  "dependencies": {
+    "nuxt": "latest"
   }
 }
