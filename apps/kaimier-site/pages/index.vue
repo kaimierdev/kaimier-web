@@ -1,12 +1,12 @@
 <template>
-  <main class="site">
-    <header class="top-header">
-      <a class="logo" href="/">
-        <span class="logo-mark" aria-hidden="true">K</span>
-        <span class="logo-text">Kaimier</span>
-      </a>
-    </header>
+  <header class="top-header">
+    <a class="logo" href="/">
+      <span class="logo-mark" aria-hidden="true">K</span>
+      <span class="logo-text">Kaimier</span>
+    </a>
+  </header>
 
+  <main class="site">
     <section class="hero">
       <p class="badge">Kaimier.com</p>
       <h1>아이디어를<br />서비스 성과로 만듭니다.</h1>
@@ -53,7 +53,7 @@
     <section id="contact" class="contact">
       <h2>빠른 실행이 필요한가요?</h2>
       <p>신규 서비스 런칭, 기능 고도화, 운영 자동화까지 함께 설계합니다.</p>
-      <a class="btn btn-primary" href="mailto:hi@kaimier.com">kaimier@msn.com</a>
+      <a class="btn btn-primary" href="mailto:hi@kaimier.com">hi@kaimier.com</a>
     </section>
 
     <footer class="footer">

@@ -33,14 +33,14 @@ a {
 .site {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 64px 24px 32px;
+  padding: 20px 24px 32px;
 }
 
 .top-header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 16px;
+  padding: 0 24px 0;
 }
 
 .logo {
@@ -215,6 +215,10 @@ h1 {
   }
 
   .site {
-    padding-top: 36px;
+    padding-top: 16px;
+  }
+
+  .top-header {
+    padding-top: 0;
   }
 }
