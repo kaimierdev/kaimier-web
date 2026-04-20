@@ -36,6 +36,41 @@ a {
   padding: 64px 24px 32px;
 }
 
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #0b1220cc;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #0a1220;
+  font-weight: 700;
+}
+
+.logo-text {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .hero {
   text-align: center;
   padding: 68px 24px;
@@ -177,5 +212,9 @@ h1 {
   .card-grid,
   .stats {
     grid-template-columns: 1fr;
+  }
+
+  .site {
+    padding-top: 36px;
   }
 }

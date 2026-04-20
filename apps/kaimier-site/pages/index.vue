@@ -1,5 +1,12 @@
 <template>
   <main class="site">
+    <header class="top-header">
+      <a class="logo" href="/">
+        <span class="logo-mark" aria-hidden="true">K</span>
+        <span class="logo-text">Kaimier</span>
+      </a>
+    </header>
+
     <section class="hero">
       <p class="badge">Kaimier.com</p>
       <h1>아이디어를<br />서비스 성과로 만듭니다.</h1>
