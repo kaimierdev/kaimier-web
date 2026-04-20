@@ -46,7 +46,7 @@
     <section id="contact" class="contact">
       <h2>빠른 실행이 필요한가요?</h2>
       <p>신규 서비스 런칭, 기능 고도화, 운영 자동화까지 함께 설계합니다.</p>
-      <a class="btn btn-primary" href="mailto:kaimier@msn.com">kaimier@msn.com</a>
+      <a class="btn btn-primary" href="mailto:hi@kaimier.com">kaimier@msn.com</a>
     </section>
 
     <footer class="footer">

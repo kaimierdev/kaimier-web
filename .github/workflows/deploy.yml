@@ -1,4 +1,4 @@
-name: Deploy to Tencent Lighthouse
+name: Deploy to Tencent Lighthouse 部署到腾讯云轻量服务器
 
 on:
   push:
