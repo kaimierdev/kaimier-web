@@ -15,6 +15,16 @@ services:
     ports:
       - "3002:80"
 
+  kaimier-admin:
+    build:
+      context: ./apps/kaimier-admin
+      dockerfile: Dockerfile
+      args:
+        VITE_BASE: /admin/
+    restart: unless-stopped
+    ports:
+      - "3003:80"
+
   api-springboot:
     build:
       context: ./backend/springboot
@@ -39,6 +49,7 @@ services:
     depends_on:
       - kaimier-site
       - kapis-platform
+      - kaimier-admin
       - api-springboot
     ports:
       - "80:80"

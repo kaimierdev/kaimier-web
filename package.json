@@ -1,0 +1,25 @@
+{
+  "name": "kaimier-web-workspace",
+  "private": true,
+  "scripts": {
+    "dev:kapis": "pnpm --filter kapis-platform dev",
+    "dev:site": "pnpm --filter kaimier-site dev",
+    "dev:admin": "pnpm --filter kaimier-admin dev",
+    "dev:spring": "mvn -f backend/springboot/pom.xml spring-boot:run",
+    "dev:fastapi": "node -e \"console.error('FastAPI not initialized yet (backend/fastapi is placeholder).'); process.exit(1)\"",
+    "dev:api": "pnpm run dev:spring",
+    "dev:all": "docker compose up --build kapis-platform kaimier-site kaimier-admin api-springboot nginx",
+    "build:kapis": "pnpm --filter kapis-platform build",
+    "build:site": "pnpm --filter kaimier-site build",
+    "build:admin": "pnpm --filter kaimier-admin build",
+    "build:spring": "mvn -f backend/springboot/pom.xml package",
+    "build:fastapi": "node -e \"console.error('FastAPI not initialized yet (backend/fastapi is placeholder).'); process.exit(1)\"",
+    "build:api": "pnpm run build:spring",
+    "preview:kapis": "pnpm --filter kapis-platform preview",
+    "preview:site": "pnpm --filter kaimier-site preview",
+    "preview:admin": "pnpm --filter kaimier-admin preview",
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f"
+  }
+}

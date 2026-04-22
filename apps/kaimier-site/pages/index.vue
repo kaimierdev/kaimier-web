@@ -4,6 +4,10 @@
       <span class="logo-mark" aria-hidden="true">K</span>
       <span class="logo-text">Kaimier</span>
     </a>
+
+    <nav class="top-nav" aria-label="Primary">
+      <a class="top-nav__link" :href="adminUrl">Admin</a>
+    </nav>
   </header>
 
   <main class="site">
@@ -64,4 +68,7 @@
 
 <script setup lang="ts">
 const year = new Date().getFullYear();
+
+const runtimeConfig = useRuntimeConfig();
+const adminUrl = computed(() => String(runtimeConfig.public.adminUrl));
 </script>

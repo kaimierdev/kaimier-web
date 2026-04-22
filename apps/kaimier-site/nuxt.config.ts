@@ -1,4 +1,10 @@
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      // 生产环境默认走同域 /admin/；本地开发可用 NUXT_PUBLIC_ADMIN_URL 覆盖（例如 http://localhost:3003/）
+      adminUrl: process.env.NUXT_PUBLIC_ADMIN_URL ?? "/admin/"
+    }
+  },
   app: {
     head: {
       htmlAttrs: { lang: "ko" },
