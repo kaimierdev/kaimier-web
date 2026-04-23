@@ -1,6 +1,21 @@
 <template>
   <main class="min-h-screen bg-slate-950 text-slate-100">
-    <div class="mx-auto max-w-6xl px-6 py-16 md:px-8">
+    <header class="fixed left-0 top-0 z-50 w-full border-b border-slate-800 bg-slate-950/85 backdrop-blur">
+      <div class="flex h-16 w-full items-center justify-between px-6 md:px-8">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-200">K</span>
+          <span class="text-sm font-semibold tracking-wide text-slate-100">KAPIS</span>
+        </div>
+        <a
+          href="mailto:kaimier@msn.com"
+          class="text-sm text-indigo-300 transition hover:text-indigo-200"
+        >
+          문의하기
+        </a>
+      </div>
+    </header>
+
+    <div class="mx-auto max-w-6xl px-6 py-16 pt-24 md:px-8">
       <HomeHero />
       <HomeStats :stats="stats" />
       <HomeFeatures :features="features" />
