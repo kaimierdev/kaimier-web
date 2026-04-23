@@ -1,4 +1,16 @@
 export default defineNuxtConfig({
+  modules: ["@nuxtjs/i18n"],
+  i18n: {
+    strategy: "prefix_except_default",
+    defaultLocale: "ko",
+    locales: [
+      { code: "ko", iso: "ko-KR", name: "Korean", file: "ko.ts" },
+      { code: "en", iso: "en-US", name: "English", file: "en.ts" },
+      { code: "zh", iso: "zh-CN", name: "Chinese", file: "zh.ts" }
+    ],
+    langDir: "locales",
+    detectBrowserLanguage: false
+  },
   runtimeConfig: {
     public: {
       // 生产环境默认走同域 /admin/；本地开发可用 NUXT_PUBLIC_ADMIN_URL 覆盖（例如 http://localhost:3003/）
