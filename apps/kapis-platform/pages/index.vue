@@ -1,17 +1,18 @@
 <template>
   <main class="min-h-screen bg-slate-950 text-slate-100">
     <header class="fixed left-0 top-0 z-50 w-full border-b border-slate-800 bg-slate-950/85 backdrop-blur">
-      <div class="flex h-16 w-full items-center justify-between px-6 md:px-8">
+      <div class="relative flex h-16 w-full items-center px-6 md:px-8">
         <div class="flex items-center gap-3">
           <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-200">K</span>
           <span class="text-sm font-semibold tracking-wide text-slate-100">KAPIS</span>
         </div>
-        <a
-          href="mailto:kaimier@msn.com"
-          class="text-sm text-indigo-300 transition hover:text-indigo-200"
-        >
-          문의하기
-        </a>
+
+        <nav class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 text-sm md:flex">
+          <NuxtLink to="/" class="text-slate-300 transition hover:text-white">홈</NuxtLink>
+          <NuxtLink to="/debug" class="text-sky-300 transition hover:text-sky-200">API 디버그</NuxtLink>
+        </nav>
+
+        <a href="mailto:kaimier@msn.com" class="ml-auto text-sm text-indigo-300 transition hover:text-indigo-200">문의하기</a>
       </div>
     </header>
 
