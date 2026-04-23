@@ -12,7 +12,7 @@
           <NuxtLink to="/debug" class="text-sky-300 transition hover:text-sky-200">API 디버그</NuxtLink>
         </nav>
 
-        <a href="mailto:kaimier@msn.com" class="ml-auto text-sm text-indigo-300 transition hover:text-indigo-200">문의하기</a>
+        <a href="mailto:hi@kaimier.com" class="ml-auto text-sm text-indigo-300 transition hover:text-indigo-200">문의하기</a>
       </div>
     </header>
 
