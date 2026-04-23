@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
   modules: ["@nuxtjs/i18n"],
+  nitro: {
+    prerender: {
+      crawlLinks: false,
+      routes: ["/", "/en", "/zh"]
+    }
+  },
   i18n: {
     strategy: "prefix_except_default",
     defaultLocale: "ko",
