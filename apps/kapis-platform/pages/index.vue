@@ -1,18 +1,30 @@
 <template>
   <main class="min-h-screen bg-slate-950 text-slate-100">
     <header class="fixed left-0 top-0 z-50 w-full border-b border-slate-800 bg-slate-950/85 backdrop-blur">
-      <div class="relative flex h-16 w-full items-center px-6 md:px-8">
-        <div class="flex items-center gap-3">
+      <div class="flex h-16 w-full items-center justify-between px-6 md:px-8">
+        <NuxtLink
+          to="/"
+          class="flex items-center gap-3 rounded-lg outline-none ring-indigo-400/40 transition hover:opacity-90 focus-visible:ring-2"
+        >
           <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-200">K</span>
           <span class="text-sm font-semibold tracking-wide text-slate-100">KAPIS</span>
+        </NuxtLink>
+
+        <div class="flex items-center gap-6 text-sm md:gap-8">
+          <nav class="hidden items-center gap-5 md:flex">
+            <NuxtLink to="/playground" class="text-sky-300 transition hover:text-sky-200">API 플레이그라운드</NuxtLink>
+            <NuxtLink to="/chat" class="text-violet-300 transition hover:text-violet-200">AI 채팅</NuxtLink>
+          </nav>
+          <div class="flex items-center gap-3">
+            <NuxtLink to="/login" class="text-slate-300 transition hover:text-white">로그인</NuxtLink>
+            <NuxtLink
+              to="/signup"
+              class="rounded-lg border border-indigo-500/40 bg-indigo-500/15 px-3 py-1.5 text-indigo-200 transition hover:border-indigo-400/60 hover:bg-indigo-500/25"
+            >
+              회원가입
+            </NuxtLink>
+          </div>
         </div>
-
-        <nav class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 text-sm md:flex">
-          <NuxtLink to="/" class="text-slate-300 transition hover:text-white">홈</NuxtLink>
-          <NuxtLink to="/debug" class="text-sky-300 transition hover:text-sky-200">API 디버그</NuxtLink>
-        </nav>
-
-        <a href="mailto:hi@kaimier.com" class="ml-auto text-sm text-indigo-300 transition hover:text-indigo-200">문의하기</a>
       </div>
     </header>
 

@@ -5,4 +5,31 @@
 html {
   overflow-y: scroll;
   scrollbar-gutter: stable;
+  /* Firefox: 얇은 스크롤바, 트랙 투명 */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+}
+
+/* Chromium / Safari: 기본은 거의 투명, 페이지 위에 마우스 시 약간 보임, 썸에 올리면 또렷하게 */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  background-color: rgba(148, 163, 184, 0.12);
+}
+
+html:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.32);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(148, 163, 184, 0.58);
 }
