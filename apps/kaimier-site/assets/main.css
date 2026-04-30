@@ -1,12 +1,12 @@
 :root {
-  --bg: #05070d;
-  --panel: #0e1320;
-  --panel-2: #121a2c;
-  --text: #f5f8ff;
-  --muted: #98a6bf;
-  --line: #22304d;
-  --primary: #6ea8fe;
-  --primary-strong: #8ab7ff;
+  --bg: #f7f9fc;
+  --panel: #ffffff;
+  --panel-2: #f8fbff;
+  --text: #0f172a;
+  --muted: #5f6f89;
+  --line: #d9e2f2;
+  --primary: #2f6df6;
+  --primary-strong: #4f86ff;
 }
 
 *,
@@ -20,8 +20,8 @@ body {
   font-family: Inter, "Noto Sans KR", "Segoe UI", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(900px 500px at 85% -10%, #27457f55, transparent 60%),
-    radial-gradient(800px 420px at -10% 15%, #1c5f6555, transparent 60%),
+    radial-gradient(900px 500px at 85% -10%, #d7e6ff, transparent 60%),
+    radial-gradient(800px 420px at -10% 15%, #d5f0ed, transparent 60%),
     var(--bg);
 }
 
@@ -45,9 +45,9 @@ a {
   justify-content: space-between;
   gap: 16px;
   padding: 0 24px 0;
-  background: #05070dbf;
+  background: #f7f9fce6;
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid #1a2740;
+  border-bottom: 1px solid #d5deed;
 }
 
 .top-nav {
@@ -60,15 +60,15 @@ a {
 .top-nav__link {
   padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid #354c73;
-  background: #101829;
-  color: #dbe7ff;
+  border: 1px solid #c5d3ec;
+  background: #ffffff;
+  color: #1e3a66;
   font-weight: 600;
   font-size: 0.92rem;
 }
 
 .top-nav__link:hover {
-  border-color: #4a6aa0;
+  border-color: #9ab4df;
 }
 
 .logo {
@@ -89,7 +89,7 @@ a {
   height: 30px;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--primary), var(--primary-strong));
-  color: #0a1220;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -104,16 +104,16 @@ a {
   padding: 68px 24px;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: linear-gradient(180deg, #10182aee, #0b1220ee);
+  background: linear-gradient(180deg, #ffffff, #f4f8ff);
 }
 
 .badge {
   display: inline-block;
   margin: 0;
   padding: 6px 12px;
-  border: 1px solid #4e6691;
+  border: 1px solid #b7c9e9;
   border-radius: 999px;
-  color: #cfe1ff;
+  color: #3a5686;
   font-size: 13px;
 }
 
@@ -153,12 +153,12 @@ h1 {
 
 .btn-primary {
   background: linear-gradient(90deg, var(--primary), var(--primary-strong));
-  color: #0a1220;
+  color: #ffffff;
 }
 
 .btn-ghost {
-  border-color: #354c73;
-  background: #101829;
+  border-color: #c5d3ec;
+  background: #ffffff;
 }
 
 .card-grid {
@@ -197,13 +197,13 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 18px 16px;
-  background: #0d1423;
+  background: #f9fbff;
 }
 
 .stat strong {
   display: block;
   font-size: 1.5rem;
-  color: #d7e7ff;
+  color: #1f3f74;
 }
 
 .stat span {
@@ -213,9 +213,9 @@ h1 {
 
 .contact {
   margin-top: 16px;
-  border: 1px solid #395488;
+  border: 1px solid #b7c9e9;
   border-radius: 18px;
-  background: linear-gradient(135deg, #0f1a30, #152746);
+  background: linear-gradient(135deg, #eef4ff, #f7fbff);
   text-align: center;
   padding: 28px 18px;
 }
@@ -227,12 +227,12 @@ h1 {
 
 .contact p {
   margin: 10px 0 16px;
-  color: #b6c7e7;
+  color: #5e7192;
 }
 
 .footer {
   text-align: center;
-  color: #7e90af;
+  color: #6f7f99;
   margin-top: 22px;
 }
 
