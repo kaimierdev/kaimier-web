@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/i18n"],
+  modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss"],
   nitro: {
     prerender: {
       crawlLinks: false,
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  css: ["~/assets/main.css"],
+  css: ["~/assets/css/tailwind.css"],
   compatibilityDate: "2025-12-01",
   devtools: { enabled: false }
 });
